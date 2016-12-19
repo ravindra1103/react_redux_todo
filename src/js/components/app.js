@@ -1,9 +1,9 @@
-import React, { PropTypes, Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import { addTodo } from '../actions/todos';
 import TodosList from './TodosList';
 import Header from './Header';
 import AddTodo from './AddTodo';
+import { connect } from 'react-redux';
 
 export class App extends Component {
   constructor(props) {
@@ -24,14 +24,4 @@ export class App extends Component {
   }
 }
 
-App.propTypes = {
-  todos: PropTypes.array,
-  id: PropTypes.number
-};
-
-let select = (state) => ({
-  todos: state.todos.todos,
-  id: state.todos.id
-});
-
-export default connect(select) (App);
+export default connect() (App);
