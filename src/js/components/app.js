@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addTodo } from '../actions/todos';
+import { addTodo, removeListItem } from '../actions/todos';
 import TodosList from './TodosList';
 import Header from './Header';
 import AddTodo from './AddTodo';
@@ -12,6 +12,10 @@ export class App extends Component {
   }
   _handleAddTodo(text) {
     this.props.dispatch(addTodo(text));
+    //this.props.dispatch(addNewNameToList(1, 'hello123'));
+    //this.props.dispatch(removeNewProductToList(2, {id: 1, productName: 'iphone7'}));
+    this.props.dispatch(removeListItem(2));
+    this.props.dispatch(removeListItem(1));
   }
   render () {
     return (
